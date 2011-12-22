@@ -1,0 +1,3 @@
+#!/bin/sh
+export TWINKLEBERRY_HOME=/Users/adamrabung/projects/twinkleberry
+java -classpath "$CLASSPATH:$TWINKLEBERRY_HOME/lib/*:$TWINKLEBERRY_HOME/bin" -Dtwinkleberry.home=$TWINKLEBERRY_HOME twinkleberry.Main "$@" &
