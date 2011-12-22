@@ -1,0 +1,27 @@
+<project name="Battlefield" default="dist" basedir="..">
+    <property name="dist.folder" value="temp"/>
+
+    <target name="dist">
+        <mkdir dir="${dist.folder}/lib"/>
+        <jar destfile="${dist.folder}/lib/twinkleberry.jar" basedir="out/production/twinkleberry"></jar>
+        <copy todir="${dist.folder}/lib">
+            <fileset file="lib/*.jar"></fileset>
+        </copy>
+
+        <copy todir="${dist.folder}/bin">
+            <fileset file="bin/*"></fileset>
+        </copy>
+        <copy todir="${dist.folder}/conf">
+            <fileset file="conf/*"></fileset>
+        </copy>
+        <copy todir="${dist.folder}/misc">
+            <fileset file="misc/*"></fileset>
+        </copy>
+
+        <zip destfile="twinkleberry.zip" basedir="${dist.folder}"/>
+
+        <!--
+        <delete dir="${dist.folder}"/>
+        -->
+    </target>
+</project>
